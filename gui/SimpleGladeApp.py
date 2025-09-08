@@ -157,6 +157,10 @@ class SimpleGladeApp:
         prefixes a widget has for each widget.
         """
         for widget in self.builder.get_objects():
+            # odd edgecase, CellRendererText is a remnant of the gtk2 conversion
+            if isinstance(widget, Gtk.CellRendererText):
+                continue
+
             widget_name = Gtk.Buildable.get_name(widget)
             if not widget_name:
                 continue
