@@ -1,6 +1,242 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
-  <requires lib="gtk+" version="3.0"/>
+  <object class="GtkListStore" id="model1">
+    <columns>
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Catalan</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Dutch</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">English</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">French</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Norwegian</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Romenian</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Spanish</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Italian</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="model2">
+    <columns>
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Instant</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Fast</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Medium</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Slow</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkUIManager" id="uimanager1">
+    <child>
+      <object class="GtkActionGroup" id="actiongroup1">
+        <child>
+          <object class="GtkAction" id="menuitem5">
+            <property name="label" translatable="yes">_File</property>
+            <property name="name">menuitem5</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="new1">
+            <property name="stock_id">gtk-new</property>
+            <property name="name">new1</property>
+            <signal name="activate" handler="on_new1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="open1">
+            <property name="stock_id">gtk-open</property>
+            <property name="name">open1</property>
+            <signal name="activate" handler="on_open1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="save1">
+            <property name="stock_id">gtk-save</property>
+            <property name="name">save1</property>
+            <signal name="activate" handler="on_save1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="save_as1">
+            <property name="stock_id">gtk-save-as</property>
+            <property name="name">save_as1</property>
+            <signal name="activate" handler="on_save_as1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="print1">
+            <property name="stock_id">gtk-print</property>
+            <property name="name">print1</property>
+            <signal name="activate" handler="on_print1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem6">
+            <property name="label" translatable="yes">_Edit</property>
+            <property name="name">menuitem6</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="cut1">
+            <property name="stock_id">gtk-cut</property>
+            <property name="name">cut1</property>
+            <signal name="activate" handler="on_cut1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="copy1">
+            <property name="stock_id">gtk-copy</property>
+            <property name="name">copy1</property>
+            <signal name="activate" handler="on_copy1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="paste1">
+            <property name="stock_id">gtk-paste</property>
+            <property name="name">paste1</property>
+            <signal name="activate" handler="on_paste1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="delete1">
+            <property name="stock_id">gtk-delete</property>
+            <property name="name">delete1</property>
+            <signal name="activate" handler="on_delete1_activate"/>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="menubar2">
+        <menu action="menuitem5">
+          <menuitem action="new1"/>
+          <menuitem action="open1"/>
+          <menuitem action="save1"/>
+          <menuitem action="save_as1"/>
+          <separator/>
+          <menuitem action="print1"/>
+        </menu>
+        <menu action="menuitem6">
+          <menuitem action="cut1"/>
+          <menuitem action="copy1"/>
+          <menuitem action="paste1"/>
+          <menuitem action="delete1"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
+  <object class="GtkUIManager" id="uimanager2">
+    <child>
+      <object class="GtkActionGroup" id="actiongroup2">
+        <child>
+          <object class="GtkAction" id="menuitem31">
+            <property name="label" translatable="yes">_GvR</property>
+            <property name="name">menuitem31</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem48">
+            <property name="stock_id">gtk-execute</property>
+            <property name="label">Open WorldBuilder</property>
+            <property name="name">imagemenuitem48</property>
+            <signal name="activate" handler="on_open_worldbuilder1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem49">
+            <property name="stock_id">gtk-quit</property>
+            <property name="name">imagemenuitem49</property>
+            <signal name="activate" handler="on_quit1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem32">
+            <property name="label" translatable="yes">_Setup</property>
+            <property name="name">menuitem32</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem50">
+            <property name="stock_id">gtk-media-forward</property>
+            <property name="label">Set Speed</property>
+            <property name="name">imagemenuitem50</property>
+            <signal name="activate" handler="on_set_speed1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem33">
+            <property name="label" translatable="yes">_Help</property>
+            <property name="name">menuitem33</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem52">
+            <property name="stock_id">gtk-dnd-multiple</property>
+            <property name="label">GvR Lessons</property>
+            <property name="name">imagemenuitem52</property>
+            <signal name="activate" handler="on_gvr_lessons1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem54">
+            <property name="stock_id">gtk-execute</property>
+            <property name="label">GvR WorlBuilder</property>
+            <property name="name">imagemenuitem54</property>
+            <signal name="activate" handler="on_gvr_worldbuilder1_activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem55">
+            <property name="stock_id">gtk-about</property>
+            <property name="name">imagemenuitem55</property>
+            <signal name="activate" handler="on_about1_activate"/>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="menubar7">
+        <menu action="menuitem31">
+          <menuitem action="imagemenuitem48"/>
+          <separator/>
+          <menuitem action="imagemenuitem49"/>
+        </menu>
+        <menu action="menuitem32">
+          <menuitem action="imagemenuitem50"/>
+        </menu>
+        <menu action="menuitem33">
+          <menuitem action="imagemenuitem52"/>
+          <menuitem action="imagemenuitem54"/>
+          <separator/>
+          <menuitem action="imagemenuitem55"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
   <!-- interface-requires gtk+ 2.6 -->
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkDialog" id="QuitDialog">
@@ -57,7 +293,6 @@
             <child>
               <object class="GtkButton" id="cancelbutton1">
                 <property name="label">gtk-cancel</property>
-                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -74,7 +309,6 @@
             <child>
               <object class="GtkButton" id="okbutton1">
                 <property name="label">gtk-ok</property>
-                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -97,6 +331,10 @@
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-6">cancelbutton1</action-widget>
+      <action-widget response="-5">okbutton1</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkDialog" id="AboutDialog">
     <property name="title" translatable="yes">About GvR</property>
@@ -163,7 +401,6 @@
             <child>
               <object class="GtkButton" id="okbutton2">
                 <property name="label">gtk-ok</property>
-                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -186,6 +423,9 @@
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-5">okbutton2</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkFileChooserDialog" id="FileDialog">
     <property name="border_width">5</property>
@@ -204,7 +444,6 @@
             <child>
               <object class="GtkButton" id="buttoncancel">
                 <property name="label">gtk-cancel</property>
-                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -221,7 +460,6 @@
             <child>
               <object class="GtkButton" id="okbutton3">
                 <property name="label">gtk-open</property>
-                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -244,6 +482,10 @@
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-6">buttoncancel</action-widget>
+      <action-widget response="-5">okbutton3</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkWindow" id="EditorWin">
     <property name="width_request">300</property>
@@ -255,116 +497,8 @@
         <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkMenuBar" id="menubar2">
+          <object class="GtkMenuBar" id="menubar2" constructor="uimanager1">
             <property name="visible">True</property>
-            <child>
-              <object class="GtkMenuItem" id="menuitem5">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_File</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <object class="GtkMenu" id="menuitem5_menu">
-                    <child>
-                      <object class="GtkImageMenuItem" id="new1">
-                        <property name="label">gtk-new</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_new1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="open1">
-                        <property name="label">gtk-open</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_open1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="save1">
-                        <property name="label">gtk-save</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_save1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="save_as1">
-                        <property name="label">gtk-save-as</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_save_as1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkSeparatorMenuItem" id="separatormenuitem2">
-                        <property name="visible">True</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="print1">
-                        <property name="label">gtk-print</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_print1_activate"/>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkMenuItem" id="menuitem6">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_Edit</property>
-                <property name="use_underline">True</property>
-                <child>
-                  <object class="GtkMenu" id="menuitem6_menu">
-                    <child>
-                      <object class="GtkImageMenuItem" id="cut1">
-                        <property name="label">gtk-cut</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_cut1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="copy1">
-                        <property name="label">gtk-copy</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_copy1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="paste1">
-                        <property name="label">gtk-paste</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_paste1_activate"/>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="delete1">
-                        <property name="label">gtk-delete</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_delete1_activate"/>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -428,16 +562,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxEntry" id="comboboxentry_language">
+              <object class="GtkComboBoxText" id="comboboxentry_language">
+                <property name="has-entry">True</property>
                 <property name="visible">True</property>
-                <property name="items" translatable="yes">Catalan
-Dutch
-English
-French
-Norwegian
-Romenian
-Spanish
-Italian</property>
+                <property name="model">model1</property>
+                <child>
+                  <object class="GtkCellRendererText" id="renderer1"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -458,7 +592,6 @@ Italian</property>
             <child>
               <object class="GtkButton" id="cancelbutton2">
                 <property name="label">gtk-cancel</property>
-                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -475,7 +608,6 @@ Italian</property>
             <child>
               <object class="GtkButton" id="okbutton4">
                 <property name="label">gtk-ok</property>
-                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -499,6 +631,10 @@ Italian</property>
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-6">cancelbutton2</action-widget>
+      <action-widget response="-5">okbutton4</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkDialog" id="SetSpeedDialog">
     <property name="visible">True</property>
@@ -527,12 +663,16 @@ Italian</property>
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxEntry" id="comboboxentry_speed">
+              <object class="GtkComboBoxText" id="comboboxentry_speed">
+                <property name="has-entry">True</property>
                 <property name="visible">True</property>
-                <property name="items" translatable="yes">Instant
-Fast
-Medium
-Slow</property>
+                <property name="model">model2</property>
+                <child>
+                  <object class="GtkCellRendererText" id="renderer2"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
               </object>
               <packing>
                 <property name="padding">4</property>
@@ -551,7 +691,6 @@ Slow</property>
             <child>
               <object class="GtkButton" id="cancelbutton3">
                 <property name="label">gtk-cancel</property>
-                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -568,7 +707,6 @@ Slow</property>
             <child>
               <object class="GtkButton" id="okbutton5">
                 <property name="label">gtk-ok</property>
-                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -591,6 +729,10 @@ Slow</property>
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-6">cancelbutton3</action-widget>
+      <action-widget response="-5">okbutton5</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkDialog" id="SummaryDialog">
     <property name="width_request">400</property>
@@ -629,7 +771,6 @@ Slow</property>
             <child>
               <object class="GtkButton" id="closebutton1">
                 <property name="label">gtk-close</property>
-                <property name="response_id">-7</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -652,6 +793,9 @@ Slow</property>
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-7">closebutton1</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkDialog" id="RobotDialog">
     <property name="width_request">450</property>
@@ -686,7 +830,7 @@ Slow</property>
                 <property name="right_attach">2</property>
                 <property name="top_attach">4</property>
                 <property name="bottom_attach">5</property>
-                <property name="y_options"></property>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -700,7 +844,7 @@ Slow</property>
                 <property name="right_attach">2</property>
                 <property name="top_attach">3</property>
                 <property name="bottom_attach">4</property>
-                <property name="y_options"></property>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -714,7 +858,7 @@ Slow</property>
                 <property name="right_attach">2</property>
                 <property name="top_attach">2</property>
                 <property name="bottom_attach">3</property>
-                <property name="y_options"></property>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -728,7 +872,7 @@ Slow</property>
                 <property name="right_attach">2</property>
                 <property name="top_attach">1</property>
                 <property name="bottom_attach">2</property>
-                <property name="y_options"></property>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -740,8 +884,8 @@ Slow</property>
               <packing>
                 <property name="top_attach">1</property>
                 <property name="bottom_attach">2</property>
-                <property name="x_options"></property>
-                <property name="y_options"></property>
+                <property name="x_options"/>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -753,8 +897,8 @@ Slow</property>
               <packing>
                 <property name="top_attach">2</property>
                 <property name="bottom_attach">3</property>
-                <property name="x_options"></property>
-                <property name="y_options"></property>
+                <property name="x_options"/>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -766,8 +910,8 @@ Slow</property>
               <packing>
                 <property name="top_attach">3</property>
                 <property name="bottom_attach">4</property>
-                <property name="x_options"></property>
-                <property name="y_options"></property>
+                <property name="x_options"/>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -779,8 +923,8 @@ Slow</property>
               <packing>
                 <property name="top_attach">4</property>
                 <property name="bottom_attach">5</property>
-                <property name="x_options"></property>
-                <property name="y_options"></property>
+                <property name="x_options"/>
+                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -791,8 +935,8 @@ Slow</property>
               </object>
               <packing>
                 <property name="right_attach">2</property>
-                <property name="x_options"></property>
-                <property name="y_options"></property>
+                <property name="x_options"/>
+                <property name="y_options"/>
               </packing>
             </child>
           </object>
@@ -807,7 +951,6 @@ Slow</property>
             <child>
               <object class="GtkButton" id="cancelbutton4">
                 <property name="label">gtk-cancel</property>
-                <property name="response_id">-6</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -824,7 +967,6 @@ Slow</property>
             <child>
               <object class="GtkButton" id="okbutton6">
                 <property name="label">gtk-ok</property>
-                <property name="response_id">-5</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -846,8 +988,13 @@ Slow</property>
         </child>
       </object>
     </child>
+    <action-widgets>
+      <action-widget response="-6">cancelbutton4</action-widget>
+      <action-widget response="-5">okbutton6</action-widget>
+    </action-widgets>
   </object>
   <object class="GtkWindow" id="window_main">
+    <property name="has_resize_grip">False</property>
     <signal name="destroy_event" handler="on_MainWin_delete_event"/>
     <signal name="delete_event" handler="on_MainWin_delete_event"/>
     <child>
@@ -881,125 +1028,8 @@ Slow</property>
                                 <property name="visible">True</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkMenuBar" id="menubar7">
+                                  <object class="GtkMenuBar" id="menubar7" constructor="uimanager2">
                                     <property name="visible">True</property>
-                                    <child>
-                                      <object class="GtkMenuItem" id="menuitem31">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">_GvR</property>
-                                        <property name="use_underline">True</property>
-                                        <child>
-                                          <object class="GtkMenu" id="menuitem31_menu">
-                                            <child>
-                                              <object class="GtkImageMenuItem" id="imagemenuitem48">
-                                                <property name="label">Open WorldBuilder</property>
-                                                <property name="visible">True</property>
-                                                <property name="use_stock">False</property>
-                                                <signal name="activate" handler="on_open_worldbuilder1_activate"/>
-                                                <child internal-child="image">
-                                                  <object class="GtkImage" id="image1">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-execute</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkSeparatorMenuItem" id="separatormenuitem14">
-                                                <property name="visible">True</property>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkImageMenuItem" id="imagemenuitem49">
-                                                <property name="label">gtk-quit</property>
-                                                <property name="visible">True</property>
-                                                <property name="use_underline">True</property>
-                                                <property name="use_stock">True</property>
-                                                <signal name="activate" handler="on_quit1_activate"/>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                    <child>
-                                      <object class="GtkMenuItem" id="menuitem32">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">_Setup</property>
-                                        <property name="use_underline">True</property>
-                                        <child>
-                                          <object class="GtkMenu" id="menuitem32_menu">
-                                            <child>
-                                              <object class="GtkImageMenuItem" id="imagemenuitem50">
-                                                <property name="label">Set Speed</property>
-                                                <property name="visible">True</property>
-                                                <property name="use_stock">False</property>
-                                                <signal name="activate" handler="on_set_speed1_activate"/>
-                                                <child internal-child="image">
-                                                  <object class="GtkImage" id="image2">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-media-forward</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                    <child>
-                                      <object class="GtkMenuItem" id="menuitem33">
-                                        <property name="visible">True</property>
-                                        <property name="label" translatable="yes">_Help</property>
-                                        <property name="use_underline">True</property>
-                                        <child>
-                                          <object class="GtkMenu" id="menuitem33_menu">
-                                            <child>
-                                              <object class="GtkImageMenuItem" id="imagemenuitem52">
-                                                <property name="label">GvR Lessons</property>
-                                                <property name="visible">True</property>
-                                                <property name="use_stock">False</property>
-                                                <signal name="activate" handler="on_gvr_lessons1_activate"/>
-                                                <child internal-child="image">
-                                                  <object class="GtkImage" id="image3">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-dnd-multiple</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkImageMenuItem" id="imagemenuitem54">
-                                                <property name="label">GvR WorlBuilder</property>
-                                                <property name="visible">True</property>
-                                                <property name="use_stock">False</property>
-                                                <signal name="activate" handler="on_gvr_worldbuilder1_activate"/>
-                                                <child internal-child="image">
-                                                  <object class="GtkImage" id="image4">
-                                                    <property name="visible">True</property>
-                                                    <property name="stock">gtk-execute</property>
-                                                  </object>
-                                                </child>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkSeparatorMenuItem" id="separatormenuitem15">
-                                                <property name="visible">True</property>
-                                              </object>
-                                            </child>
-                                            <child>
-                                              <object class="GtkImageMenuItem" id="imagemenuitem55">
-                                                <property name="label">gtk-about</property>
-                                                <property name="visible">True</property>
-                                                <property name="use_underline">True</property>
-                                                <property name="use_stock">True</property>
-                                                <signal name="activate" handler="on_about1_activate"/>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1252,7 +1282,7 @@ Slow</property>
                                 <child>
                                   <object class="GtkStatusbar" id="statusbar7">
                                     <property name="visible">True</property>
-                                    <property name="has_resize_grip">False</property>
+                                    <!-- <property name="has_resize_grip">False</property> -->
                                     <signal name="text_pushed" handler="on_statusbar1_text_pushed"/>
                                     <signal name="text_popped" handler="on_statusbar1_text_popped"/>
                                   </object>
@@ -1266,26 +1296,22 @@ Slow</property>
                             </child>
                           </object>
                         </child>
-                        <child>
+                        <child type="label">
                           <object class="GtkLabel" id="label19">
                             <property name="visible">True</property>
                             <property name="label" translatable="yes">&lt;b&gt;Guido's World&lt;/b&gt;</property>
                             <property name="use_markup">True</property>
                           </object>
-                          <packing>
-                            <property name="type">label_item</property>
-                          </packing>
                         </child>
                       </object>
                     </child>
-                    <child>
+                    <child type="tab">
                       <object class="GtkLabel" id="guidosworld">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Guido's World</property>
                       </object>
                       <packing>
                         <property name="tab_fill">False</property>
-                        <property name="type">tab</property>
                       </packing>
                     </child>
                     <child>
@@ -1311,11 +1337,8 @@ Slow</property>
                           </object>
                         </child>
                       </object>
-                      <packing>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
-                    <child>
+                    <child type="tab">
                       <object class="GtkLabel" id="languagereference">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Language reference</property>
@@ -1323,7 +1346,6 @@ Slow</property>
                       <packing>
                         <property name="position">1</property>
                         <property name="tab_fill">False</property>
-                        <property name="type">tab</property>
                       </packing>
                     </child>
                     <child>
@@ -1334,11 +1356,8 @@ Slow</property>
                           <placeholder/>
                         </child>
                       </object>
-                      <packing>
-                        <property name="position">2</property>
-                      </packing>
                     </child>
-                    <child>
+                    <child type="tab">
                       <object class="GtkLabel" id="lessons">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Lessons</property>
@@ -1346,7 +1365,6 @@ Slow</property>
                       <packing>
                         <property name="position">2</property>
                         <property name="tab_fill">False</property>
-                        <property name="type">tab</property>
                       </packing>
                     </child>
                     <child>
@@ -1371,11 +1389,8 @@ Slow</property>
                           </object>
                         </child>
                       </object>
-                      <packing>
-                        <property name="position">3</property>
-                      </packing>
                     </child>
-                    <child>
+                    <child type="tab">
                       <object class="GtkLabel" id="intro">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Introduction</property>
@@ -1383,7 +1398,6 @@ Slow</property>
                       <packing>
                         <property name="position">3</property>
                         <property name="tab_fill">False</property>
-                        <property name="type">tab</property>
                       </packing>
                     </child>
                   </object>
@@ -1412,14 +1426,13 @@ Slow</property>
                         </child>
                       </object>
                     </child>
-                    <child>
+                    <child type="tab">
                       <object class="GtkLabel" id="label26">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">Code editor</property>
                       </object>
                       <packing>
                         <property name="tab_fill">False</property>
-                        <property name="type">tab</property>
                       </packing>
                     </child>
                     <child>
@@ -1437,11 +1450,8 @@ Slow</property>
                           </object>
                         </child>
                       </object>
-                      <packing>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
-                    <child>
+                    <child type="tab">
                       <object class="GtkLabel" id="label27">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">World editor</property>
@@ -1449,7 +1459,6 @@ Slow</property>
                       <packing>
                         <property name="position">1</property>
                         <property name="tab_fill">False</property>
-                        <property name="type">tab</property>
                       </packing>
                     </child>
                   </object>
