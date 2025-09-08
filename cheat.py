@@ -7,4 +7,4 @@ class Cheat:
         elif command in robot.gui.SleepDict.keys():
             robot.gui.setSpeed(command)
         else:
-            print 'unrecognized cheat', command
+            print('unrecognized cheat', command)
