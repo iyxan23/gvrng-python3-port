@@ -74,8 +74,8 @@ RCDICT = {}
 
 # path to the frontend(s) etc
 # Intended to make packaging easier
-FRONTENDDIR = os.path.join(get_rootdir(), 'gui-gtk')
-PIXMAPSDIR = os.path.join(get_rootdir(), 'gui-gtk', 'pixmaps')
+FRONTENDDIR = os.path.join(get_rootdir(), 'gui')
+PIXMAPSDIR = os.path.join(get_rootdir(), 'gui', 'pixmaps')
 LOCALEDIR = os.path.join(get_rootdir(), 'locale')
 
 module_logger.debug("Constant paths:")

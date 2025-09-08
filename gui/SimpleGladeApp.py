@@ -111,7 +111,7 @@ class SimpleGladeApp:
             self.normalize_names()
             self.builder.connect_signals(self)
             self.new()
-                
+
         def __repr__(self):
             class_name = self.__class__.__name__
             if self.main_widget:

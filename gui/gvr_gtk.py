@@ -71,7 +71,7 @@ class Window(SimpleGladeApp):
             self.parentGUI = self.window_main
             self.windowtitle = "GvRng"
             self.parentGUI.set_title(self.windowtitle)
-            file = os.path.join(os.getcwd(), 'gui-gtk',
+            file = os.path.join(os.getcwd(), 'gui',
                                 'pixmaps', 'gvrIcon.bmp')
             try:
                 self.parentGUI.set_icon_from_file(file)

@@ -120,7 +120,7 @@ Text.set_WBsummary(LocaleMesg[1])  # idem for the worldbuilder
 Text.set_Intro(LocaleMesg[1])  # and the intro text
 
 # when the frontend is not in sitepackages, as is the case for the org install
-sys.path.append('gui-gtk')
+sys.path.append('gui')
 
 
 def main(handle=None, parent=None):
@@ -146,5 +146,4 @@ def main(handle=None, parent=None):
         return 1
 
 
-if __name__ == "__main__":
-    main()
+main()
