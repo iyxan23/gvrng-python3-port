@@ -22,4 +22,6 @@ GvRng is originally licensed with GPLv2 as seen in the [copyright file](./copyri
 
 ### Notes
 
-1.  I omitted the `docs/` folder from this repository
+1.  This port is super dirty right now, I am prioritizing getting it running
+    first before any cleanups.
+2.  I omitted the `docs/` folder from this repository

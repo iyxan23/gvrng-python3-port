@@ -21,12 +21,12 @@
 
 import GvrController
 import GvrModel
-import gvr_gtk  # the frontend to use
+import gui.gvr_gtk
 import Text
 import logging
 import sys
 import os
-import __builtin__
+import builtins
 import utils
 # ignore warnings as it isn't useful for the user to see them.
 # At this moment, Editors.Editor.format raises a GTK warning
@@ -80,8 +80,8 @@ module_logger.debug("Start logging")
 if PLATFORM != 'XO':
     # This is a kludge to execute the toplevel code in utils as it is already
     # imported before the loggers are set.
-    # TODO: no idea what `reload(utils)` is used for, is this python2 specific?
-    import utils
+    import importlib
+    importlib.reload(utils)
 
 utils.setUpUnixRC()
 
@@ -112,7 +112,7 @@ except Exception:
     module_logger.exception(
         "Problems setting the locale.\n switching to English\nPlease inform the GvR developers about this."
     )
-    __builtin__.__dict__['_'] = lambda x: x
+    builtins.__dict__['_'] = lambda x: x
 
 # needed to set summary file used to the current locale
 Text.set_summary(LocaleMesg[1])
@@ -131,9 +131,9 @@ def main(handle=None, parent=None):
         # view must be the main GUI window
         if PLATFORM == 'XO':
             # all the gui windows runs in one window on XO
-            view = gvr_gtk.WindowXO(handle, parent)
+            view = gui.gvr_gtk.WindowXO(handle, parent)
         else:
-            view = gvr_gtk.Window(parent)
+            view = gui.gvr_gtk.Window(parent)
         # the controller must have access to the model and view
         contr = GvrController.Controller(model, view)
         # we also must give the model access to the controller

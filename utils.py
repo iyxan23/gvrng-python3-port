@@ -141,8 +141,9 @@ def get_locale():
         # FIX locale.py LANGUAGE parsing bug, the fix was added on the
         # upstream CVS on the 1.28.4.2 revision of 'locale.py', It
         # should be included on Python 2.4.2.
-        if os.environ.has_key('LANGUAGE'):
-            lang = os.environ['LANGUAGE'].split(':')[0]
+        # TODO: get language working
+        # if os.environ.contains('LANGUAGE'):
+            # lang = os.environ['LANGUAGE'].split(':')[0]
         # This makes sure that we never return a value of None.
         # This is a fix for systems that set LANGUAGE to ''.
         if lang == '':

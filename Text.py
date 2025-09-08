@@ -1,21 +1,21 @@
-## This module holds the different help text used by gvr in the menu
-DEBUG = 0
-import os
-from utils import get_rootdir
+# This module holds the different help text used by gvr in the menu
 import logging
+from utils import get_rootdir
+import os
+DEBUG = 0
 
 module_logger = logging.getLogger("gvr.Text")
 
-OnRefText = ''# this will be set to some text in set_summary() 
+OnRefText = ''  # this will be set to some text in set_summary()
 InfoFooter = "For more info, http://gvr.sf.net"
 OnRefTitle = "Guido van Robot Programming Summary"
 
-OnWBText = ''# this will be set to some text in set_summary() 
+OnWBText = ''  # this will be set to some text in set_summary()
 OnIntroText = ''
 
 # Builtin summary text, we use it in case of IO trouble.
 BuiltinOnRefText = \
-"""Guido van Robot Programming Summary
+    """Guido van Robot Programming Summary
 The Five Primitive Guido van Robot Instructions:
 
    1. move
@@ -117,7 +117,7 @@ define <new_name>:
 """
 
 BuiltinOnWBText = \
-"""Guido van Robot Worldbuilder Summary
+    """Guido van Robot Worldbuilder Summary
 Editing world:
     Left mouse button : Add or remove walls 
     Middle mouse button: Set arguments for the robot statement
@@ -135,8 +135,8 @@ Buttons:
 
 """
 
-BuiltinOnIntroText=\
-"""Welcome to the Guido van Robot world.
+BuiltinOnIntroText =\
+    """Welcome to the Guido van Robot world.
 
 Guido van Robot, or GvR for short, is a programming language
 and free software application designed to introduce beginners
@@ -179,26 +179,28 @@ def set_summary(olang):
     # put all the Summaries on the same dir.
     try:
         lang = olang.split('@')[0].split('.')[0].split('_')[0]
-    except Exception,info:
-        print info
-        print "Can't load Summary for language '%s'" % lang
-        print "Using default English file"
+    except Exception as info:
+        print(info)
+        print("Can't load Summary for language '%s'" % lang)
+        print("Using default English file")
         lang = 'en'
     sumfile = "Summary-%s.txt" % lang
     if lang == 'en':
-        path = os.path.join(get_rootdir(),'po',sumfile)
+        path = os.path.join(get_rootdir(), 'po', sumfile)
     else:
-        path = os.path.join(get_rootdir(),'po',lang,sumfile)
-    if DEBUG: print "trying to read",path
+        path = os.path.join(get_rootdir(), 'po', lang, sumfile)
+    if DEBUG:
+        print("trying to read", path)
     try:
-        lines = open(path,'r').read()
-    except IOError,info:
-        print info
-        print "Can't load Summary for language '%s'" % lang
-        print "Using default English file"
+        lines = open(path, 'r').read()
+    except IOError as info:
+        print(info)
+        print("Can't load Summary for language '%s'" % lang)
+        print("Using default English file")
         OnRefText = BuiltinOnRefText
     else:
         OnRefText = lines
+
 
 def set_WBsummary(olang):
     """Get the proper Worldbuilder summary file for the current locale"""
@@ -210,26 +212,28 @@ def set_WBsummary(olang):
     # put all the Summaries on the same dir.
     try:
         lang = olang.split('@')[0].split('.')[0].split('_')[0]
-    except Exception,info:
-        print info
-        print "Can't load Worldbuilder Summary for language '%s'" % lang
-        print "Using default English file"
+    except Exception as info:
+        print(info)
+        print("Can't load Worldbuilder Summary for language '%s'" % lang)
+        print("Using default English file")
         lang = 'en'
     sumfile = "WBSummary-%s.txt" % lang
     if lang == 'en':
-        path = os.path.join(get_rootdir(),'po',sumfile)
+        path = os.path.join(get_rootdir(), 'po', sumfile)
     else:
-        path = os.path.join(get_rootdir(),'po',lang,sumfile)
-    if DEBUG: print "trying to read",path
+        path = os.path.join(get_rootdir(), 'po', lang, sumfile)
+    if DEBUG:
+        print("trying to read", path)
     try:
-        lines = open(path,'r').read()
-    except IOError,info:
-        print info
-        print "Can't load Worldbuilder Summary for language '%s'" % lang
-        print "Using default English file"
+        lines = open(path, 'r').read()
+    except IOError as info:
+        print(info)
+        print("Can't load Worldbuilder Summary for language '%s'" % lang)
+        print("Using default English file")
         OnWBText = BuiltinOnWBText
     else:
         OnWBText = lines
+
 
 def set_Intro(olang):
     """Get the proper intro text file for the current locale"""
@@ -241,27 +245,24 @@ def set_Intro(olang):
     # put all the Summaries on the same dir.
     try:
         lang = olang.split('@')[0].split('.')[0].split('_')[0]
-    except Exception,info:
-        print info
-        print "Can't load Intro text for language '%s'" % lang
-        print "Using default English file"
+    except Exception as info:
+        print(info)
+        print("Can't load Intro text for language '%s'" % lang)
+        print("Using default English file")
         lang = 'en'
     sumfile = "Intro-%s.txt" % lang
     if lang == 'en':
-        path = os.path.join(get_rootdir(),'po',sumfile)
+        path = os.path.join(get_rootdir(), 'po', sumfile)
     else:
-        path = os.path.join(get_rootdir(),'po',lang,sumfile)
-    if DEBUG: print "trying to read",path
+        path = os.path.join(get_rootdir(), 'po', lang, sumfile)
+    if DEBUG:
+        print("trying to read", path)
     try:
-        lines = open(path,'r').read()
-    except IOError,info:
-        print info
-        print "Can't load intro for language '%s'" % lang
-        print "Using default English file"
+        lines = open(path, 'r').read()
+    except IOError as info:
+        print(info)
+        print("Can't load intro for language '%s'" % lang)
+        print("Using default English file")
         OnIntroText = BuiltinOnIntroText
     else:
         OnIntroText = lines
-
-    
-    
-    
