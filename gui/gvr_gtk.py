@@ -72,7 +72,7 @@ class Window(SimpleGladeApp):
             self.windowtitle = "GvRng"
             self.parentGUI.set_title(self.windowtitle)
             file = os.path.join(os.getcwd(), 'gui',
-                                'pixmaps', 'gvrIcon.bmp')
+                                'pixmaps', 'gvrIcon.png')
             try:
                 self.parentGUI.set_icon_from_file(file)
             except GLib.Error:
