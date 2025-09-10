@@ -16,7 +16,7 @@ class GuiWorldException(Exception):
     def __init__(self, str): self.str = str
     def __str__(self): return self.str
 
-class TurnedOffException: pass
+class TurnedOffException(BaseException): pass
 
 class GuiWorld:
     def __init__(self, gui, logicalWorld):
