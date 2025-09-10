@@ -337,9 +337,10 @@ class Canvas(Gtk.DrawingArea):
         cr.paint()
 
     def _get_direction_pixbuf(self):
-        return {'E': self.robot_e_pixbuf, 'W': self.robot_w_pixbuf,
-                'N': self.robot_n_pixbuf, 'S': self.robot_s_pixbuf}
-        [self.world.get_robots_direction()]
+        return {
+            'E': self.robot_e_pixbuf, 'W': self.robot_w_pixbuf,
+            'N': self.robot_n_pixbuf, 'S': self.robot_s_pixbuf
+        }[self.world.get_robots_direction()]
 
     def draw_splash(self):
         self.stuff_to_draw = [self._draw_splash]
