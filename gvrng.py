@@ -146,4 +146,5 @@ def main(handle=None, parent=None):
         return 1
 
 
-main()
+if __name__ == "__main__":
+    main()

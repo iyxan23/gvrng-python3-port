@@ -1,2 +1,4 @@
+import gvrng
+
 if __name__ == "__main__":
-    import gvrng
+    gvrng.main()
