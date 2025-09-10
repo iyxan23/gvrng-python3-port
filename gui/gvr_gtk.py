@@ -87,7 +87,7 @@ class Window(SimpleGladeApp):
                 self.lessons.destroy()
 
         txt = Text.OnRefText
-        buffer = Gtk.TextBuffer(table=None)
+        buffer = Gtk.TextBuffer()
         try:
             txt = ''.join(txt)
             utxt = str(txt)
@@ -100,7 +100,7 @@ class Window(SimpleGladeApp):
         self.textview_languagereference.show_all()
 
         txt = Text.OnIntroText
-        buffer = Gtk.TextBuffer(table=None)
+        buffer = Gtk.TextBuffer()
         try:
             txt = ''.join(txt)
             utxt = str(txt)
