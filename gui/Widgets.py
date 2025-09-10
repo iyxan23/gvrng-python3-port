@@ -490,7 +490,7 @@ class WBCanvas(Canvas):
                 return True
             dlg = BeeperDialog(
                 txt="Please give the number of beepers\nto place on %d,%d\n (Number must be > 0)" % (x, y))
-            beepersline = '%s %s %s' % ('beepers'), x, y
+            beepersline = f"beepers {x} {y}"
             for line in self.wcode:
                 if line.find(beepersline) != -1:
                     self.wcode.remove(line)
@@ -506,7 +506,7 @@ class WBCanvas(Canvas):
                     WarningDialog(
                         txt='Beeper values must be zero or more.\nUse zero as the value to remove beeper(s)')
                     return True
-                bline = "%s %d %d %d\n" % ('beepers'), x, y, num_beepers
+                bline = f"beepers {x} {y} {num_beepers}"
             dlg.destroy()
 
         wcode = list(filter(None, [wline, bline]))

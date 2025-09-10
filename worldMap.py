@@ -6,10 +6,7 @@
 # in this module.  See the worlds folder for examples.
 
 from world import NORTH, SOUTH, EAST, WEST
-from utils import trace_error
-import sys
 import re
-import gettext
 
 # Use this to be able to extract strings for translation by pygettext.py
 # try:
@@ -141,7 +138,11 @@ def readWorld(lines, world):
                     world.setRobotBeepers(int(numBeepers))
                 elif keyword == 'BEEPERS':
                     x, y, numBeepers = tokens[1:]
-                    world.setBeepers(int(x), int(y), int(numBeepers))
+                    world.setBeepers(
+                        int(float(x)),
+                        int(float(y)),
+                        int(numBeepers),
+                    )
                 elif keyword == 'BDFL':
                     useGuido = True
                 elif keyword == 'SIZE':
@@ -165,7 +166,6 @@ def readWorld(lines, world):
                 e, linenumber, line)
             raise WorldMapException(linenumber, info)
         except Exception as e:
-            # trace_error()
             info = "Error: %s\n in line %s: %s\nCheck your world file for syntax errors" % (
                 e, linenumber, line)
             raise WorldMapException(linenumber, info)

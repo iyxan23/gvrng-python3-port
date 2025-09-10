@@ -120,8 +120,8 @@ class World:
     def setWall_wb(self, x, y, dir):
         """Same as setWall but used by the worldbuilder to determine if
         a wall should be removed"""
-        x = int(x)
-        y = int(y)
+        x = int(float(x))
+        y = int(float(y))
         # print "setWall_wb",dir,NORTH,SOUTH
         if dir in (NORTH, SOUTH):
             coords = (x, y)
@@ -130,8 +130,8 @@ class World:
         return self.setSingleWall(coords, dir)
 
     def setWall(self, x, y, dir, length=1):
-        x = int(x)
-        y = int(y)
+        x = int(float(x))
+        y = int(float(y))
         length = int(length)
         for offset in range(length):
             if dir in (NORTH, SOUTH):
