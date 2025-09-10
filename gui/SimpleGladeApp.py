@@ -111,7 +111,25 @@ class SimpleGladeApp:
         else:
             self.main_widget = None
         self.normalize_names()
-        self.builder.connect_signals(self)
+
+        def signal_handler_finder(
+            builder, obj, signal_name, handler_name, connect_obj,
+            flags, user_data=None,
+        ):
+            # look up the handler in self
+            handler = getattr(self, handler_name, None)
+            if handler is not None:
+                module_logger.debug(
+                    f"Handler found for `{handler_name}` for signal `{signal_name}`"
+                )
+                obj.connect(signal_name, handler)
+            else:
+                # skip silently instead of erroring
+                module_logger.debug(
+                    f"No handler found for {handler_name}, skipping."
+                )
+
+        self.builder.connect_signals_full(signal_handler_finder)
         self.new()
 
     def __repr__(self):
