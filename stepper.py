@@ -139,7 +139,7 @@ class Stepper:
             self.enterBlock(blockFrame(lineOfCode))
             return
         command = lineOfCode.statement
-        if self.funcs.has_key(command):
+        if command in self.funcs:
             self.enterUserDefinedMethod(command)
             return
         if self.debugger:

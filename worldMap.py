@@ -88,19 +88,18 @@ def readWorld(lines, world):
                 tokens = line.split()
                 tokens = [x.upper() for x in tokens]
                 keyword = tokens[0]
-                if lookup_dict.has_key(keyword):
+                if keyword in lookup_dict:
                     keyword = lookup_dict[keyword]
                 if keyword == 'ROBOT':
                     if len(tokens) < 4:
                         raise WorldMapException(linenumber,
                                                 'Robot direction argument missing')
                     dir = tokens[3]
-                    if lookup_dir_dict.has_key(dir):
+                    if dir in lookup_dir_dict:
                         dir = lookup_dir_dict[dir]
                         tokens[3] = dir
                     else:
-                        print(lookup_dir_dict.has_key(
-                            dir), lookup_dir_dict, dir)
+                        print(dir in lookup_dir_dict, lookup_dir_dict, dir)
                         raise WorldMapException(linenumber,
                                                 'No valid direction given for the robot')
                 if keyword == 'WALL':
@@ -117,11 +116,11 @@ def readWorld(lines, world):
                                 int(tokens[4])
                             except ValueError:
                                 raise WorldMapException(linenumber,
-                                                        '%s length argument must be an integer' % _('WALL'))
+                                                        '%s length argument must be an integer' % 'WALL')
                             else:
                                 if int(tokens[4]) < 1:
                                     raise WorldMapException(linenumber,
-                                                            '%s length argument must be greater than zero' % _('WALL'))
+                                                            '%s length argument must be greater than zero' % 'WALL')
                     world.setWall(*tokens[1:])
                 elif keyword == 'ROBOT':
                     if definedRobot:

@@ -302,7 +302,7 @@ def parseDefine(tokens):
 
 def parseProgram(tokens, ignore=None):
     for dict in tokens:
-        if lookup_dict.has_key(dict['statement']):
+        if dict['statement'] in lookup_dict:
             dict['statement'] = lookup_dict[dict['statement']]
     global FUNCS
     FUNCS = []

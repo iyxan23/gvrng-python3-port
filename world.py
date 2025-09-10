@@ -201,7 +201,7 @@ class World:
 
     def PICKBEEPER(self):
         (x, y) = self.robot
-        if self.beepers.has_key((x, y)) and self.beepers[(x, y)] >= 1:
+        if (x, y) in self.beepers and self.beepers[(x, y)] >= 1:
             self.robotBeepers += 1
             self.beepers[(x, y)] -= 1
             if self.beepers[(x, y)] == 0:

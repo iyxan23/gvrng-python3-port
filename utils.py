@@ -176,7 +176,7 @@ def set_locale(lang=None):
             # __builtin__.__dict__['_'] = lambda x: x
             return ("", "en")
         languages = [lang]
-        if os.environ.has_key('LANGUAGE'):
+        if 'LANGUAGE' in os.environ:
             languages += os.environ['LANGUAGE'].split(':')
         module_logger.debug("languages found are %s" % languages)
         lang_trans = gettext.translation('gvrng',
