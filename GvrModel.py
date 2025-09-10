@@ -130,7 +130,7 @@ class GvrModel:
             # See stepper.Stepper.step
             self.myStepper = stepper.Stepper(
                 codestring, myGuiWorld, self.controller)
-        except gvrparser.BadCommanda as info:
+        except gvrparser.BadCommand as info:
             utils.trace_error()
             self.controller.give_error(str(info))
         else:
